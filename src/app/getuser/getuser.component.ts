@@ -23,7 +23,7 @@ export class GetuserComponent implements OnInit {
   onSubmit() {
         this._taskService.postID = this.postID;
         // this.score = 12;
-        this._taskService.retrieveTasks((userData) => { //callback is here
+        this._taskService.retrieveTasks(this.postID, (userData) => { //callback is here
           this.postExists = false;
           this.userData = userData;
           this.title = userData["title"];
