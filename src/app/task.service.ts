@@ -8,17 +8,17 @@ export class TaskService {
   postID: string;
 
   constructor(private _http: Http) { }
-  retrieveTasks(callback,errorback) {
-    this._http.get('https://jsonplaceholder.typicode.com/posts/'+this.postID).subscribe( 
+  retrieveTasks(id, callback,errorback) {
+    this._http.get('https://jsonplaceholder.typicode.com/posts/'+id).subscribe( 
       (response) => { 
-        console.log(response.json());
+        // console.log(response.json());
         this.userData = response.json();
         callback(this.userData);
-        console.log(this.userData);
+        // console.log(this.userData);
        }, // <— first method
       (error) => { 
         errorback();
-        console.log(error);
+        // console.log(error);
        } // <— second method
       
     );
